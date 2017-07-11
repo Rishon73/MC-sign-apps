@@ -4,6 +4,8 @@ VERSION="$1"
 cd /Users/shahar/OneDrive\ -\ Hewlett\ Packard\ Enterprise/4.\ Work/1.Mobile\ Center/
 
 FOLDER=$(date +%y-%m-%d-%H%M%S)
+x=$pwd
+echo $x
 
 mkdir Mobile\ Apps/AOS/May\ 25\ 2017\ -\ v1.1.1/$FOLDER
 echo Dir "Mobile\ Apps/AOS/May\ 25\ 2017\ -\ v1.1.1/$FOLDER"  was created!
