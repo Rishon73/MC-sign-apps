@@ -1,21 +1,33 @@
 #!/bin/bash
 
 VERSION="$1"
-cd /Users/shahar/OneDrive\ -\ Hewlett\ Packard\ Enterprise/4.\ Work/1.Mobile\ Center/
+BASE=/Users/shahar/OneDrive\ -\ Hewlett\ Packard\ Enterprise/4.\ Work/1.Mobile\ Center/
+cd "${BASE}"
+echo directory is now: "$(pwd)"
 
-FOLDER=$(date +%y-%m-%d-%H%M%S)
-x=$pwd
-echo $x
+NEW_FOLDER=$(date +%y-%m-%d-%H%M%S)
+IPA_FOLDER=Mobile\ Apps/AOS/May\ 25\ 2017\ -\ v1.1.1
+PATH2="${IPA_FOLDER}/$NEW_FOLDER"
 
-mkdir Mobile\ Apps/AOS/May\ 25\ 2017\ -\ v1.1.1/$FOLDER
-echo Dir "Mobile\ Apps/AOS/May\ 25\ 2017\ -\ v1.1.1/$FOLDER"  was created!
+mkdir "${PATH2}"
+echo "${PATH2}" was created...
 
-echo running "$VERSION/HPMCEnabler/HPMCEnabler" command
+echo About to run "--$VERSION/HPMCEnabler/HPMCEnabler--" on "--$IPA_FOLDER/Advantage\ Shopping.ipa--" command now...
 
-$VERSION/HPMCEnabler/HPMCEnabler Mobile\ Apps/AOS/May\ 25\ 2017\ -\ v1.1.1/Advantage\ Shopping.ipa \
+$VERSION/HPMCEnabler/HPMCEnabler "${IPA_FOLDER}"/Advantage\ Shopping.ipa \
 -i $VERSION/HPMCEnabler/HPMobileCenter.dylib \
 -j $VERSION/HPMCEnabler/HybridJS \
 -c "iPhone Developer: Shahar Shiff (S524ZZQSE5)" \
 -p MC_Provision_Profile.mobileprovision \
--d Mobile\ Apps/AOS/May\ 25\ 2017\ -\ v1.1.1/$FOLDER \
+-d "${PATH2}" \
 -v
+
+echo Renaming ${PATH2}/Advantage Shopping-HPMCEnabled.ipa to ${PATH2}/Advantage Shopping-HPMCEnabled-${VERSION}.ipa
+
+echo Renaming app... $PATH2
+cd "$PATH2"
+echo directory is now: "$(pwd)"
+
+mv Advantage\ Shopping-HPMCEnabled.ipa Advantage\ Shopping-HPMCEnabled-${VERSION}.ipa
+
+echo Done!!!
