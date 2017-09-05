@@ -14,7 +14,7 @@ versions=(2.01 2.01p1 2.20 2.50 2.51)
 for i in "${!versions[@]}"; do
     printf "\n######################### START ${versions[$i]} ###############################\n";
     printf "Changing directory to MC ${versions[$i]} Enabler folder\n";
-    cd ~/OneDrive\ -\ Hewlett\ Packard\ Enterprise/4.\ Work/1.Mobile\ Center/${versions[$i]}/HPMCEnabler;
+    cd ~/OneDrive\ -\ Hewlett\ Packard\ Enterprise/4.Work/1.Mobile\ Center/${versions[$i]}/HPMCEnabler;
 
     folder=$(pwd);
     printf "Folder is now: $(pwd)\n\n";

@@ -8,7 +8,7 @@
 ##############################
 
 VERSION="$1"
-BASE=/Users/shahar/OneDrive\ -\ Hewlett\ Packard\ Enterprise/4.\ Work/1.Mobile\ Center/
+BASE=/Users/shahar/OneDrive\ -\ Hewlett\ Packard\ Enterprise/4.Work/1.Mobile\ Center/
 cd "${BASE}"
 echo directory is now: "$(pwd)"
 
