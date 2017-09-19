@@ -26,23 +26,23 @@ for i in "${!versions[@]}"; do
     ./HPMCEnabler HPMC-AgentLauncher.ipa -c iPhone\ Developer\:\ Shahar\ Shiff\ \(S524ZZQSE5\) -p ../../MC_Provision_Profile.mobileprovision -n HPMC-AgentLauncher.ipa;
 
     printf "Create folder: ../../Shared MC Content/${versions[$i]}\n";
-    mkdir ../../Shared\ MC\ Content/${versions[$i]};
+    mkdir ../../SharedMCContent/${versions[$i]};
 
     printf "Copy P4M-Agent.ipa to .../${versions[$i]} folder\n";
-    cp HP4M-Agent.ipa ../../Shared\ MC\ Content/${versions[$i]}/HP4M-Agent.ipa;
+    cp HP4M-Agent.ipa ../../SharedMCContent/${versions[$i]}/HP4M-Agent.ipa;
 
     printf "Copy HPMC-AgentLauncher.ipa to .../${versions[$i]}/ folder\n";
-    cp HPMC-AgentLauncher.ipa ../../Shared\ MC\ Content/${versions[$i]}/HPMC-AgentLauncher.ipa;
+    cp HPMC-AgentLauncher.ipa ../../SharedMCContent/${versions[$i]}/HPMC-AgentLauncher.ipa;
 
-    printf "Changing directorty to ../../Shared\ MC\ Content/${versions[$i]}\n"
-    cd ../../Shared\ MC\ Content/${versions[$i]}
+    printf "Changing directorty to ../../SharedMCContent/${versions[$i]}\n"
+    cd ../../SharedMCContent/${versions[$i]}
 
     printf "Zipping the 2 ipa files in .../${versions[$i]}\n";
-    tar -jcvf SignedAgent_v${versions[$i]}.tar.bz2 ./*.ipa
+    #tar -jcvf SignedAgent_v${versions[$i]}.tar.bz2 ./*.ipa
     zip -r SignedAgent_v${versions[$i]}.zip ./*.ipa
 
     Printf "Remove the 2 ipa files from .../${versions[$i]}\n"
-    rm *.ipa
+    #rm *.ipa
 
     printf "\n############################ END ${versions[$i]} ############################\n\n"
 done
