@@ -17,10 +17,7 @@ cd "${BASE}"
 echo directory is now: "$(pwd)"
 
 NEW_FOLDER=$(date +%y-%m-%d-%H%M%S)
-#IPA_FOLDER=Mobile\ Apps/AOS/July\ 2017\ -\ v1.1.2
 IPA_FOLDER=$(dirname "${APP_FULL_PATH}")
-#PATH2="${IPA_FOLDER}/$NEW_FOLDER"
-#APP_NAME=Advantage+demo+1_1_2
 APP_NAME=$(basename "${APP_FULL_PATH}")
 APP_NAME_NO_EXT="${APP_NAME%.*}"
 
@@ -33,15 +30,9 @@ echo "APP_NAME_NO_EXT: "$APP_NAME_NO_EXT
 echo "IPA_FOLDER: "$IPA_FOLDER
 echo "NEW_FOLDER: "$NEW_FOLDER
 echo "========================================"
-#echo "PATH2: "$PATH2
 
-#mkdir "${PATH2}"
-#echo "${PATH2}" was created...
-
-#echo About to run "--$VERSION/HPMCEnabler/HPMCEnabler--" on "--$IPA_FOLDER/$APP_NAME.ipa--" command now...
 echo About to run "--$VERSION/HPMCEnabler/HPMCEnabler--" on "--$IPA_FOLDER/$APP_NAME" command now...
 
-#$VERSION/HPMCEnabler/HPMCEnabler "${IPA_FOLDER}"/$APP_NAME.ipa \
 $VERSION/HPMCEnabler/HPMCEnabler "${APP_FULL_PATH}" \
 -i $VERSION/HPMCEnabler/HPMobileCenter.dylib \
 -j $VERSION/HPMCEnabler/HybridJS \
@@ -54,8 +45,6 @@ echo directory is now: "$(pwd)"
 
 echo Moving ${IPA_FOLDER}/${APP_NAME_NO_EXT}-HPMCEnabled.ipa to $"${BASE}SharedMCContent/SignedAOS/"${APP_NAME_NO_EXT}-HPMCEnabled-${VERSION}.ipa
 
-#mv Advantage\ Shopping-HPMCEnabled.ipa Advantage\ Shopping-HPMCEnabled-${VERSION}.ipa
-#mv ${APP_NAME_NO_EXT}-HPMCEnabled.ipa ${APP_NAME_NO_EXT}-HPMCEnabled-${VERSION}.ipa
 mv ${APP_NAME_NO_EXT}-HPMCEnabled.ipa "${BASE}SharedMCContent/SignedAOS/"${APP_NAME_NO_EXT}-HPMCEnabled-${VERSION}.ipa
 echo $?
 
