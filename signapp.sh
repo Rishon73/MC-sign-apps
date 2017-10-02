@@ -45,7 +45,7 @@ echo directory is now: "$(pwd)"
 
 echo Moving ${IPA_FOLDER}/${APP_NAME_NO_EXT}-HPMCEnabled.ipa to $"${BASE}SharedMCContent/SignedAOS/"${APP_NAME_NO_EXT}-HPMCEnabled-${VERSION}.ipa
 
-mv ${APP_NAME_NO_EXT}-HPMCEnabled.ipa "${BASE}SharedMCContent/SignedAOS/"${APP_NAME_NO_EXT}-HPMCEnabled-${VERSION}.ipa
+mv ${APP_NAME_NO_EXT}-HPMCEnabled.ipa "${BASE}SharedMCContent/SignedApps/"${APP_NAME_NO_EXT}-HPMCEnabled-${VERSION}.ipa
 echo $?
 
 echo Done!!!
