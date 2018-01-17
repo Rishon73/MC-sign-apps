@@ -29,7 +29,7 @@ VERSION=$1;
     printf "Signing Agent Launcher...\n";
     ./HPMCEnabler HPMC-AgentLauncher.ipa -c iPhone\ Developer\:\ Shahar\ Shiff\ \(S524ZZQSE5\) -p ../../MC_Provision_Profile.mobileprovision -n HPMC-AgentLauncher-${VERSION}.ipa;
 
-    if [ ${VERSION} = "2.51" ]; then
+    if [ ${VERSION} = "2.51" ] || [ ${VERSION} = "2.53" ]; then
       printf "Signing WebDriver Agent Runner...\n";
       ./HPMCEnabler WebDriverAgentRunner-Runner.ipa -c iPhone\ Developer\:\ Shahar\ Shiff\ \(S524ZZQSE5\) -p ../../MC_Provision_Profile.mobileprovision -n WebDriverAgentRunner-Runner-${VERSION}.ipa;
 
@@ -46,7 +46,7 @@ VERSION=$1;
     printf "Copy HPMC-AgentLauncher.ipa to .../${VERSION}/ folder\n";
     cp HPMC-AgentLauncher-${VERSION}.ipa ../../SharedMCContent/${VERSION}/HPMC-AgentLauncher.ipa;
 
-    if [ ${VERSION} = "2.51" ]; then
+    if [ ${VERSION} = "2.51" ] || [ ${VERSION} = "2.53" ]; then
       printf "Copy WebDriverAgentRunner-Runner.ipa to .../${VERSION}/ folder\n";
       cp WebDriverAgentRunner-Runner-${VERSION}.ipa ../../SharedMCContent/${VERSION}/WebDriverAgentRunner-Runner.ipa;
 
